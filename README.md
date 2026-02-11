@@ -37,9 +37,17 @@
 apt update && apt install -y git make ansible && \
 git clone https://github.com/chikamint/infra-gateway-automation.git && \
 cd infra-gateway-automation && \
+make init
+make install-local
+...
+```
+Для установки удалённо используйте:
+```bash
 make setup
 ...
 ```
+
+
 После установки обязательно нужно создать учётную запись с помощью команды
 
 ```bash

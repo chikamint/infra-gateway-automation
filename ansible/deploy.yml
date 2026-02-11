@@ -80,15 +80,20 @@
           GF_SERVER_SERVE_FROM_SUB_PATH: "true"
 
     # --- ЭТАП 6: ФИНАЛ ---
-    - name: 12. Финальный рестарт (Применяем всё)
+    - name: 12. Рестарт (Применяем всё)
       shell: |
 
         fuser -k 443/tcp || true
         marzban restart
-        systemctl restart nginx
       async: 60
       poll: 0
 
-    - name: 13. Инструкция
+    - name: 13. Перезапуск Nginx
+      systemd:
+        name: nginx
+        state: restarted
+        enabled: yes
+
+    - name: 14. Инструкция
       debug:
         msg: "Готово! Теперь зайди на сервер и выполни: marzban cli admin create --sudo"
