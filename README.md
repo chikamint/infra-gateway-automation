@@ -37,7 +37,6 @@ apt update && apt install -y git make ansible && \
 git clone https://github.com/chikamint/infra-gateway-automation.git && \
 cd infra-gateway-automation && \
 make install-local
-...
 ```
 Для установки удалённо используйте:
 ```bash
@@ -46,7 +45,6 @@ git clone https://github.com/chikamint/infra-gateway-automation.git && \
 cd infra-gateway-automation && \
 make init
 make setup
-...
 ```
 
 
@@ -54,7 +52,6 @@ make setup
 
 ```bash
 marzban cli admin create --sudo
-...
 ```
  
 ---
@@ -81,5 +78,4 @@ marzban cli admin create --sudo
 │   └── templates/
 │       ├── nginx.conf.j2       # Шаблон конфига Nginx
 │       └── xray_config.json.j2 # Шаблон конфига Xray
-...
 ```
