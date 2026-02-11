@@ -101,3 +101,5 @@
     - name: 14. Инструкция
       debug:
         msg: "Готово! Теперь зайди на сервер и выполни: marzban cli admin create --sudo"
+        msg: "Панель Marzban будет доступна по адресу: https://(домен)/dashboard
+        msg: "Grafana будет доступна по адресу: https://(домен)/grafana
