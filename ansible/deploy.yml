@@ -26,6 +26,10 @@
         certbot certonly --standalone -d {{ domain }} --email {{ email }} --agree-tos --non-interactive
       args:
         creates: "/etc/letsencrypt/live/{{ domain }}/fullchain.pem"
+      register: certbot_result
+      until: certbot_result.rc == 0
+      retries: 3
+      delay: 5
 
     # --- ЭТАП 2: УСТАНОВКА MARZBAN ---
     - name: 4. Установка Marzban
